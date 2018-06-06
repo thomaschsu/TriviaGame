@@ -23,20 +23,23 @@ var q2 = {
     w3: 'E.T.'
 };
 
+var q3 = {
+    q: 'What fictional city is the home of Batman?',
+    a: 'Gateway City',
+    w1: 'Gotham City',
+    w2: 'The Hidden City',
+    w3: 'Zenith City'
+};
+
 console.log(q1.a);
 
 // Start button on click starts the game
 $("#start").click(startGame);
 
-// One question is shown at a time
-
-
-// Time remaining is 30 seconds per question
+// Time remaining is 120 seconds for entire game
 function startNumber(){
     number--;
-    //  Once number hits zero...
     if (number === 0) {
-        //  Alert the user that time is up.
         alert("Time Up!");
       }
 }
@@ -44,11 +47,11 @@ function startNumber(){
 
 function startGame() {
     $("#show-number").html("<h2>Time remaining: " + number + " Seconds</h2>");
-    $('#question').html('<p>' + q1.q + '</p>');
-    $('#correctanswer').html('<p>' + q1.a + '</p>');
-    $('#wronganswers').append('<p>' + q1.w1 + '</p>');
-    $('#wronganswers').append('<p>' + q1.w2 + '</p>');
-    $('#wronganswers').append('<p>' + q1.w3 + '</p>');
+    $('#question').html('<h2>#1: ' + q1.q + '</h2>');
+    $('#correctanswer').html('<input type="radio" name="answer">' + q1.a);
+    $('#wronganswers').append('<input type="radio" name="answer">' + q1.w1);
+    $('#wronganswers').append('<input type="radio" name="answer">' + q1.w2);
+    $('#wronganswers').append('<input type="radio" name="answer">' + q1.w3);
 }
 
   function run() {

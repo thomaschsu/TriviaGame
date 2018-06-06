@@ -23,20 +23,6 @@ body {
 .footer {
     min-height: calc(85vh - 70px);
 }
-
-#currentWord {
-    font-size: 40px;
-    text-align: center;
-}
-
-#losses, #guessedLetters {
-    background-color:rgba(0,0,0,.05)
-}
-
-#wins, #losses, #guessesLeft, #guessedLetters {
-    padding: 5px 15px;
-}
-
 #start {
     text-align: center;
 }
