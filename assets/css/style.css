@@ -19,6 +19,7 @@ body {
 }
 .jumbotron {
     background-color: #FAFAFA;
+    text-align: center;
 }
 .footer {
     min-height: calc(85vh - 70px);

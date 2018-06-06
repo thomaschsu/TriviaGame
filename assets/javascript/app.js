@@ -5,8 +5,9 @@ var unanswered = 0;
 var number = 120;
 var intervalId;
 var showQuestion;
+var start = $("#start");
 
-// Questions
+// Question objects
 var q1 = {
     q: 'Who played Neo in The Matrix?',
     a: 'Keanu Reeves',
@@ -31,12 +32,13 @@ var q3 = {
     w3: 'Zenith City'
 };
 
-// Start button on click starts the game
-$("#start").click(startGame);
+// Start button on click starts game function
+start.click(startGame);
 
 // Time remaining is 120 seconds for entire game
-function startNumber() {
+function startTimer() {
     number--;
+    $("#timer").html("<h2>Time remaining: " + number + " Seconds</h2>");
     if (number === 0) {
         alert("Time Up!");
     }
@@ -44,10 +46,12 @@ function startNumber() {
 
 
 function startGame() {
-    $('#start').remove();
-    $("#show-number").html("<h2>Time remaining: " + number + " Seconds</h2>");
+    // Start timer
+    run();
+    // Remove Start button
+    start.remove();
     $('#question').html('<h2>#1: ' + q1.q + '</h2>');
-    $('#correctanswer').html('<input type="radio" name="answer">' + q1.a);
+    $('#correctanswer').append('<input type="radio" name="answer">' + q1.a);
     $('#wronganswers').append('<input type="radio" name="answer">' + q1.w1);
     $('#wronganswers').append('<input type="radio" name="answer">' + q1.w2);
     $('#wronganswers').append('<input type="radio" name="answer">' + q1.w3);
@@ -55,22 +59,20 @@ function startGame() {
 
 function run() {
     clearInterval(intervalId);
-    intervalId = setInterval(startNumber, 1000);
+    intervalId = setInterval(startTimer, 1000);
 }
-
-run();
 
 // If click answer, shows a message that says correct and add count to correct
 
-$('#correctanswer').on("click", function() {
-    alert("That is the right answer!");
-    correct++;
-})
+// $('#correctanswer').on("click", function() {
+//     alert("That is the right answer!");
+//     correct++;
+// })
 
-$('#wronganswers').on("click", function() {
-    alert("Nope sorry!");
-    incorrect++;
-})
+// $('#wronganswers').on("click", function() {
+//     alert("Nope sorry!");
+//     incorrect++;
+// })
 
 
 // Press start, opens game / starts counter (120 seconds)
