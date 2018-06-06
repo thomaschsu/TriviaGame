@@ -2,24 +2,63 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
+var number = 30;
+var intervalId;
 
-// Objects
+// Questions
+var q1 = {
+    q: 'Who played Neo in The Matrix?',
+    a: 'Keanu Reeves',
+    w1: 'Denzel Washington',
+    w2: 'Johnny Depp',
+    w3: 'Tom Hanks'
+};
 
+console.log(q1.a1);
 
-// Functions
-function startQuestion() {
-    showDiv = setInterval(nextDiv, 3000);
-}
+$('#question').html('<p>' + q1.q + '</p>');
+$('#answers').html('<p>' + q1.a + '</p>');
+$('#answers').append('<p>' + q1.w1 + '</p>');
+$('#answers').append('<p>' + q1.w2 + '</p>');
+$('#answers').append('<p>' + q1.w3 + '</p>');
 
 // Game starts with a page that has start button
-$("#start").click(startQuestion);
+// $("#start").click(startQuestion);
 
 // Start button on click starts the game
+// function startQuestion() {
+//     showDiv = setInterval(nextDiv, 3000);
+// }
+
 // One question is shown at a time
+
+
 // Time remaining is 30 seconds per question
+function decrement() {
+    number--;
+    $("#show-number").html("<h2>Time remaining: " + number + " Seconds</h2>");
+
+    //  Once number hits zero...
+    if (number === 0) {
+      //  Alert the user that time is up.
+      alert("Time Up!");
+    }
+  }
+
+  function run() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+  }
+
+run();
 // One questions, 4 answer multiple choice
+
 // If unanswered, shows correct answer and goes to next question
+
 // Automatically moves to next question
-// Gif's on each question
+
+// GIF's on each question
+
 // At the end tells you how many correct, incorrect, and unanswered
+
 // Start over button on last page does not reload page, resets game
