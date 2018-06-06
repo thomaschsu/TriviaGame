@@ -27,3 +27,12 @@ body {
 #start {
     text-align: center;
 }
+#correctanswer,
+#wronganswers,
+#correctanswer2,
+#wronganswers2 {
+    display: inline;
+}
+input {
+    margin: 0 5px;
+}

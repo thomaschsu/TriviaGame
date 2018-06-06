@@ -6,6 +6,9 @@ var number = 120;
 var intervalId;
 var showQuestion;
 var start = $("#start");
+var input = '<input type="radio" name="answer">';
+var input2 = '<input type="radio" name="answer2">';
+
 
 // Question objects
 var q1 = {
@@ -32,7 +35,7 @@ var q3 = {
     w3: 'Zenith City'
 };
 
-// Start button on click starts game function
+// Press start, opens game / starts counter (120 seconds)
 start.click(startGame);
 
 // Time remaining is 120 seconds for entire game
@@ -50,11 +53,16 @@ function startGame() {
     run();
     // Remove Start button
     start.remove();
-    $('#question').html('<h2>#1: ' + q1.q + '</h2>');
-    $('#correctanswer').append('<input type="radio" name="answer">' + q1.a);
-    $('#wronganswers').append('<input type="radio" name="answer">' + q1.w1);
-    $('#wronganswers').append('<input type="radio" name="answer">' + q1.w2);
-    $('#wronganswers').append('<input type="radio" name="answer">' + q1.w3);
+    $('#question').append('<h2>#1: ' + q1.q + '</h2>');
+    $('#correctanswer').append(input + q1.a);
+    $('#wronganswers').append(input + q1.w1);
+    $('#wronganswers').append(input + q1.w2);
+    $('#wronganswers').append(input + q1.w3);
+    $('#question2').append('<h2>#2: ' + q2.q + '</h2>');
+    $('#correctanswer2').append(input2 + q2.a);
+    $('#wronganswers2').append(input2 + q2.w1);
+    $('#wronganswers2').append(input2 + q2.w2);
+    $('#wronganswers2').append(input2 + q2.w3);
 }
 
 function run() {
@@ -73,9 +81,6 @@ function run() {
 //     alert("Nope sorry!");
 //     incorrect++;
 // })
-
-
-// Press start, opens game / starts counter (120 seconds)
 
 // Regardless if answer all questions, says "All done" tells you correct, incorrect, and unanswered
 
