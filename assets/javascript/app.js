@@ -21,31 +21,25 @@ var q2 = {
     w1: 'Star Wars',
     w2: 'Nightmare on Elm Street',
     w3: 'E.T.'
-}
+};
 
 console.log(q1.a1);
 
-$('#question').html('<p>' + q1.q + '</p>');
-$('#correctanswer').html('<p>' + q1.a + '</p>');
-$('#answers').append('<p>' + q1.w1 + '</p>');
-$('#answers').append('<p>' + q1.w2 + '</p>');
-$('#answers').append('<p>' + q1.w3 + '</p>');
-
-// Game starts with a page that has start button
-$("#start").click(startGame);
-
 // Start button on click starts the game
-// function startGame() {
-//     showDiv = setInterval(nextDiv, 3000);
-// }
+$("#start").click(startGame);
 
 // One question is shown at a time
 
 
 // Time remaining is 30 seconds per question
-function decrement() {
+function startGame() {
     number--;
     $("#show-number").html("<h2>Time remaining: " + number + " Seconds</h2>");
+    $('#question').html('<p>' + q1.q + '</p>');
+    $('#correctanswer').html('<p>' + q1.a + '</p>');
+    $('#wronganswers').append('<p>' + q1.w1 + '</p>');
+    $('#wronganswers').append('<p>' + q1.w2 + '</p>');
+    $('#wronganswers').append('<p>' + q1.w3 + '</p>');
 
     //  Once number hits zero...
     if (number === 0) {
@@ -65,10 +59,12 @@ run();
 
 $('#correctanswer').on("click", function(){
     alert("That is the right answer!");
+    correct++;
 })
 
-$('#answers').on("click", function(){
-    alert("Nope sorry");
+$('#wronganswers').on("click", function(){
+    alert("Nope sorry!");
+    incorrect++;
 })
 
 // One questions, 4 answer multiple choice

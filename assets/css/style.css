@@ -8,6 +8,7 @@ body {
     background-image: url("../images/bg.jpeg");
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
 }
 .body-container {
     display:table;
@@ -20,7 +21,7 @@ body {
     background-color: #FAFAFA;
 }
 .footer {
-    min-height: calc(65vh - 70px);
+    min-height: calc(85vh - 70px);
 }
 
 #currentWord {
