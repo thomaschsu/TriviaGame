@@ -17,16 +17,16 @@ var q1 = {
 console.log(q1.a1);
 
 $('#question').html('<p>' + q1.q + '</p>');
-$('#answers').html('<p>' + q1.a + '</p>');
+$('#correctanswer').html('<p>' + q1.a + '</p>');
 $('#answers').append('<p>' + q1.w1 + '</p>');
 $('#answers').append('<p>' + q1.w2 + '</p>');
 $('#answers').append('<p>' + q1.w3 + '</p>');
 
 // Game starts with a page that has start button
-// $("#start").click(startQuestion);
+$("#start").click(startGame);
 
 // Start button on click starts the game
-// function startQuestion() {
+// function startGame() {
 //     showDiv = setInterval(nextDiv, 3000);
 // }
 
@@ -51,6 +51,17 @@ function decrement() {
   }
 
 run();
+
+// If click answer, shows a message that says correct and add count to correct
+
+$('#correctanswer').on("click", function(){
+    alert("That is the right answer!");
+})
+
+$('#answers').on("click", function(){
+    alert("Nope sorry");
+})
+
 // One questions, 4 answer multiple choice
 
 // If unanswered, shows correct answer and goes to next question
