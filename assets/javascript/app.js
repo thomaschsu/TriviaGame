@@ -31,21 +31,20 @@ var q3 = {
     w3: 'Zenith City'
 };
 
-console.log(q1.a);
-
 // Start button on click starts the game
 $("#start").click(startGame);
 
 // Time remaining is 120 seconds for entire game
-function startNumber(){
+function startNumber() {
     number--;
     if (number === 0) {
         alert("Time Up!");
-      }
+    }
 }
 
 
 function startGame() {
+    $('#start').remove();
     $("#show-number").html("<h2>Time remaining: " + number + " Seconds</h2>");
     $('#question').html('<h2>#1: ' + q1.q + '</h2>');
     $('#correctanswer').html('<input type="radio" name="answer">' + q1.a);
@@ -54,21 +53,21 @@ function startGame() {
     $('#wronganswers').append('<input type="radio" name="answer">' + q1.w3);
 }
 
-  function run() {
+function run() {
     clearInterval(intervalId);
     intervalId = setInterval(startNumber, 1000);
-  }
+}
 
 run();
 
 // If click answer, shows a message that says correct and add count to correct
 
-$('#correctanswer').on("click", function(){
+$('#correctanswer').on("click", function() {
     alert("That is the right answer!");
     correct++;
 })
 
-$('#wronganswers').on("click", function(){
+$('#wronganswers').on("click", function() {
     alert("Nope sorry!");
     incorrect++;
 })
