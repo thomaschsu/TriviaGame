@@ -5,7 +5,15 @@ var unanswered = 0;
 
 // Objects
 
+
+// Functions
+function startQuestion() {
+    showDiv = setInterval(nextDiv, 3000);
+}
+
 // Game starts with a page that has start button
+$("#start").click(startQuestion);
+
 // Start button on click starts the game
 // One question is shown at a time
 // Time remaining is 30 seconds per question
