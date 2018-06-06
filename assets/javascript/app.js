@@ -4,6 +4,7 @@ var incorrect = 0;
 var unanswered = 0;
 var number = 30;
 var intervalId;
+var showQuestion;
 
 // Questions
 var q1 = {
@@ -13,6 +14,14 @@ var q1 = {
     w2: 'Johnny Depp',
     w3: 'Tom Hanks'
 };
+
+var q2 = {
+    q: 'BB-8 is an astromech droid from what film?',
+    a: 'Alien',
+    w1: 'Star Wars',
+    w2: 'Nightmare on Elm Street',
+    w3: 'E.T.'
+}
 
 console.log(q1.a1);
 
