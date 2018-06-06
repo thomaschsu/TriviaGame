@@ -2,7 +2,7 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var number = 30;
+var number = 120;
 var intervalId;
 var showQuestion;
 
@@ -23,7 +23,7 @@ var q2 = {
     w3: 'E.T.'
 };
 
-console.log(q1.a1);
+console.log(q1.a);
 
 // Start button on click starts the game
 $("#start").click(startGame);
@@ -32,25 +32,28 @@ $("#start").click(startGame);
 
 
 // Time remaining is 30 seconds per question
-function startGame() {
+function startNumber(){
     number--;
+    //  Once number hits zero...
+    if (number === 0) {
+        //  Alert the user that time is up.
+        alert("Time Up!");
+      }
+}
+
+
+function startGame() {
     $("#show-number").html("<h2>Time remaining: " + number + " Seconds</h2>");
     $('#question').html('<p>' + q1.q + '</p>');
     $('#correctanswer').html('<p>' + q1.a + '</p>');
     $('#wronganswers').append('<p>' + q1.w1 + '</p>');
     $('#wronganswers').append('<p>' + q1.w2 + '</p>');
     $('#wronganswers').append('<p>' + q1.w3 + '</p>');
-
-    //  Once number hits zero...
-    if (number === 0) {
-      //  Alert the user that time is up.
-      alert("Time Up!");
-    }
-  }
+}
 
   function run() {
     clearInterval(intervalId);
-    intervalId = setInterval(decrement, 1000);
+    intervalId = setInterval(startNumber, 1000);
   }
 
 run();
@@ -67,14 +70,11 @@ $('#wronganswers').on("click", function(){
     incorrect++;
 })
 
-// One questions, 4 answer multiple choice
 
-// If unanswered, shows correct answer and goes to next question
+// Press start, opens game / starts counter (120 seconds)
 
-// Automatically moves to next question
+// Regardless if answer all questions, says "All done" tells you correct, incorrect, and unanswered
 
-// GIF's on each question
+// 8 Questions can only select one answer per question
 
-// At the end tells you how many correct, incorrect, and unanswered
-
-// Start over button on last page does not reload page, resets game
+// Hit done button and goes to "All done" page
