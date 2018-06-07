@@ -2,7 +2,7 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var number = 9999;
+var number = 5;
 var intervalId;
 var showQuestion;
 var start = $('#start');
@@ -40,8 +40,9 @@ var q4 = {
 // Press start, opens game / starts counter (120 seconds)
 start.click(startGame);
 
-// Hides results
+// Hides results & timer
 $('#results').hide();
+$('#timer').hide();
 
 // Time remaining is 120 seconds for entire game
 function startTimer() {
@@ -57,6 +58,7 @@ function startTimer() {
 function startGame() {
     // Start timer
     run();
+    $('#timer').show();
     // Remove Start button
     start.remove();
     // Append questions, answers

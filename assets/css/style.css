@@ -36,3 +36,13 @@ body {
 input {
     margin: 0 5px;
 }
+#timer {
+    margin: 20px auto;
+    background-color: #EF5350;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
+    text-shadow: 1px 1px #000;
+}
