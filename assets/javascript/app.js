@@ -35,6 +35,14 @@ var q3 = {
     w3: 'Zenith City'
 };
 
+var q4 = {
+    q: 'Which actress played Katniss Everdeen in "The Hunger Games"?',
+    a: 'Jennifer Lawrence',
+    w1: 'Anne Hathaway',
+    w2: 'Kate Winslet',
+    w3: 'Natalie Portman'
+};
+
 // Press start, opens game / starts counter (120 seconds)
 start.click(startGame);
 
@@ -76,9 +84,10 @@ function run() {
 
 // If click answer, shows a message that says correct and add count to correct
 
-$('#correctanswer').on("click", function() {
+$('#correctanswer').focus(function() {
     correct++;
 });
+
 
 $('#wronganswers').on("click", function() {
     incorrect++;
