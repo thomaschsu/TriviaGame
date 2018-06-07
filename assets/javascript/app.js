@@ -1,3 +1,8 @@
+// Bugs list:
+// 1. Cannot capture value of input
+// 2. Create done button
+// 3. Count the question results
+
 // Variables
 var correct = 0;
 var incorrect = 0;
@@ -10,7 +15,6 @@ var input = '<input type="radio" name="answer">';
 var input2 = '<input type="radio" name="answer2">';
 var input3 = '<input type="radio" name="answer3">';
 var input4 = '<input type="radio" name="answer4">';
-
 
 // Questions
 var q1 = {
@@ -27,13 +31,13 @@ var q2 = {
 
 var q3 = {
     q: 'What fictional city is the home of Batman?',
-    a: ['Gateway City', 'Gotham City', 'The Hidden City', 'Zenith City'],
+    a: ['Gateway City', 'The Hidden City', 'Zenith City', 'Gotham City'],
     ca: 'Gotham City'
 };
 
 var q4 = {
     q: 'Which actress played Katniss Everdeen in "The Hunger Games"?',
-    a: ['Jennifer Lawrence', 'Anne Hathaway', 'Kate Winslet', 'Natalie Portman'],
+    a: ['Anne Hathaway', 'Kate Winslet', 'Jennifer Lawrence', 'Natalie Portman'],
     ca: 'Jennifer Lawrence'
 };
 
@@ -78,15 +82,7 @@ function run() {
     intervalId = setInterval(startTimer, 1000);
 }
 
-// If click answer, shows a message that says correct and add count to correct
-$('#correctanswer').focus(function() {
-    correct++;
-});
-
-
-$('#wronganswers').on("click", function() {
-    incorrect++;
-});
+// Count amount of correct, incorrect, and unanswered questions
 
 $('#results').html("<h2>All done!</h2>");
 $('#results').append("<h2>Correct Answers: " + correct + "</h2>");
@@ -94,7 +90,5 @@ $('#results').append("<h2>Incorrect Answers: " + incorrect + "</h2>");
 $('#results').append("<h2>Unanswered: " + unanswered + "</h2>");
 
 // Regardless if answer all questions, says "All done" tells you correct, incorrect, and unanswered
-
-// 8 Questions can only select one answer per question
 
 // Hit done button and goes to "All done" page
