@@ -2,7 +2,7 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var number = 5;
+var number = 9999;
 var intervalId;
 var showQuestion;
 var start = $('#start');
@@ -68,7 +68,7 @@ function startGame() {
     $('#answer2').append(input2 + q2.a[0], input2 + q2.a[1], input2 + q2.a[2], input2 + q2.a[3]);
     $('#question3').append('<h3>#3: ' + q3.q + '</h3>');
     $('#answer3').append(input3 + q3.a[0], input3 + q3.a[1], input3 + q3.a[2], input3 + q3.a[3]);
-    $('#question4').append('<h3>#4: ' + q2.q + '</h3>');
+    $('#question4').append('<h3>#4: ' + q4.q + '</h3>');
     $('#answer4').append(input4 + q4.a[0], input4 + q4.a[1], input4 + q4.a[2], input4 + q4.a[3]);
 }
 
