@@ -2,12 +2,14 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var number = 120;
+var number = 9999;
 var intervalId;
 var showQuestion;
 var start = $('#start');
 var input = '<input type="radio" name="answer">';
 var input2 = '<input type="radio" name="answer2">';
+var input3 = '<input type="radio" name="answer3">';
+var input4 = '<input type="radio" name="answer4">';
 
 
 // Questions
@@ -58,10 +60,14 @@ function startGame() {
     // Remove Start button
     start.remove();
     // Append questions, answers
-    $('#question').append('<h2>#1: ' + q1.q + '</h2>');
-    $('#correctanswer').append(input + q1.a);
-    $('#question2').append('<h2>#2: ' + q2.q + '</h2>');
-    $('#correctanswer2').append(input2 + q2.a);
+    $('#question').append('<h3>#1: ' + q1.q + '</h3>');
+    $('#answer').append(input + q1.a[0], input + q1.a[1], input + q1.a[2], input + q1.a[3]);
+    $('#question2').append('<h3>#2: ' + q2.q + '</h3>');
+    $('#answer2').append(input2 + q2.a[0], input2 + q2.a[1], input2 + q2.a[2], input2 + q2.a[3]);
+    $('#question3').append('<h3>#3: ' + q3.q + '</h3>');
+    $('#answer3').append(input3 + q3.a[0], input3 + q3.a[1], input3 + q3.a[2], input3 + q3.a[3]);
+    $('#question4').append('<h3>#4: ' + q2.q + '</h3>');
+    $('#answer4').append(input4 + q4.a[0], input4 + q4.a[1], input4 + q4.a[2], input4 + q4.a[3]);
 }
 
 function run() {
