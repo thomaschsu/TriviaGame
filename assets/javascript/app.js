@@ -2,45 +2,37 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var number = 30;
+var number = 120;
 var intervalId;
 var showQuestion;
-var start = $("#start");
+var start = $('#start');
 var input = '<input type="radio" name="answer">';
 var input2 = '<input type="radio" name="answer2">';
 
 
-// Question objects
+// Questions
 var q1 = {
     q: 'Who played Neo in The Matrix?',
-    a: 'Keanu Reeves',
-    w1: 'Denzel Washington',
-    w2: 'Johnny Depp',
-    w3: 'Tom Hanks'
+    a: ['Keanu Reeves', 'Denzel Washington', 'Johnny Depp','Tom Hanks'],
+    ca: 'Keanu Reeves'
 };
 
 var q2 = {
     q: 'BB-8 is an astromech droid from what film?',
-    a: 'Alien',
-    w1: 'Star Wars',
-    w2: 'Nightmare on Elm Street',
-    w3: 'E.T.'
+    a: ['Alien', 'Star Wars', 'Nightmare on Elm Street', 'E.T.'],
+    ca: 'Star Wars'
 };
 
 var q3 = {
     q: 'What fictional city is the home of Batman?',
-    a: 'Gateway City',
-    w1: 'Gotham City',
-    w2: 'The Hidden City',
-    w3: 'Zenith City'
+    a: ['Gateway City', 'Gotham City', 'The Hidden City', 'Zenith City'],
+    ca: 'Gotham City'
 };
 
 var q4 = {
     q: 'Which actress played Katniss Everdeen in "The Hunger Games"?',
-    a: 'Jennifer Lawrence',
-    w1: 'Anne Hathaway',
-    w2: 'Kate Winslet',
-    w3: 'Natalie Portman'
+    a: ['Jennifer Lawrence', 'Anne Hathaway', 'Kate Winslet', 'Natalie Portman'],
+    ca: 'Jennifer Lawrence'
 };
 
 // Press start, opens game / starts counter (120 seconds)
@@ -65,16 +57,11 @@ function startGame() {
     run();
     // Remove Start button
     start.remove();
+    // Append questions, answers
     $('#question').append('<h2>#1: ' + q1.q + '</h2>');
     $('#correctanswer').append(input + q1.a);
-    $('#wronganswers').append(input + q1.w1);
-    $('#wronganswers').append(input + q1.w2);
-    $('#wronganswers').append(input + q1.w3);
     $('#question2').append('<h2>#2: ' + q2.q + '</h2>');
     $('#correctanswer2').append(input2 + q2.a);
-    $('#wronganswers2').append(input2 + q2.w1);
-    $('#wronganswers2').append(input2 + q2.w2);
-    $('#wronganswers2').append(input2 + q2.w3);
 }
 
 function run() {
@@ -83,7 +70,6 @@ function run() {
 }
 
 // If click answer, shows a message that says correct and add count to correct
-
 $('#correctanswer').focus(function() {
     correct++;
 });
