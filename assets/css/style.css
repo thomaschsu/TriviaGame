@@ -22,7 +22,7 @@ body {
     text-align: center;
 }
 .footer {
-    min-height: calc(85vh - 70px);
+    min-height: calc(65vh - 70px);
 }
 #start {
     text-align: center;
