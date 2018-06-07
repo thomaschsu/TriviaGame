@@ -2,7 +2,7 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var number = 9999;
+var number = 120;
 var intervalId;
 var showQuestion;
 var start = $('#start');
@@ -48,6 +48,7 @@ $('#timer').hide();
 function startTimer() {
     number--;
     $("#timer").html("<h2>Time remaining: " + number + " Seconds</h2>");
+    // When time hits 0, show results and remove everything else
     if (number === 0) {
         $('#question-container').remove();
         $('#timer').remove();
