@@ -2,7 +2,7 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var number = 120;
+var number = 30;
 var intervalId;
 var showQuestion;
 var start = $("#start");
@@ -38,15 +38,19 @@ var q3 = {
 // Press start, opens game / starts counter (120 seconds)
 start.click(startGame);
 
+// Hides results
+$('#results').hide();
+
 // Time remaining is 120 seconds for entire game
 function startTimer() {
     number--;
     $("#timer").html("<h2>Time remaining: " + number + " Seconds</h2>");
     if (number === 0) {
-        alert("Time Up!");
+        $('#question-container').remove();
+        $('#timer').remove();
+        $('#results').show();
     }
 }
-
 
 function startGame() {
     // Start timer
@@ -72,15 +76,18 @@ function run() {
 
 // If click answer, shows a message that says correct and add count to correct
 
-// $('#correctanswer').on("click", function() {
-//     alert("That is the right answer!");
-//     correct++;
-// })
+$('#correctanswer').on("click", function() {
+    correct++;
+});
 
-// $('#wronganswers').on("click", function() {
-//     alert("Nope sorry!");
-//     incorrect++;
-// })
+$('#wronganswers').on("click", function() {
+    incorrect++;
+});
+
+$('#results').html("<h2>All done!</h2>");
+$('#results').append("<h2>Correct Answers: " + correct + "</h2>");
+$('#results').append("<h2>Incorrect Answers: " + incorrect + "</h2>");
+$('#results').append("<h2>Unanswered: " + unanswered + "</h2>");
 
 // Regardless if answer all questions, says "All done" tells you correct, incorrect, and unanswered
 
