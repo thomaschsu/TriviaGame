@@ -1,9 +1,10 @@
 // Bugs list:
 // 1. Capture value of input
-// 2. Create done button
-// 3. Count the results
-// 4. Make label for radio buttons
-// 5. Remove Repeated code
+// 2. Make value equal to the string of the answer
+// 3. Create done button
+// 4. Make conditional statement to count results
+// 5. Make label for radio buttons
+// 6. Remove Repeated code
 
 // Variables
 var correct = 0;
