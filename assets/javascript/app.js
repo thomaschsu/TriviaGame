@@ -11,6 +11,7 @@ var number = 120;
 var intervalId;
 var showQuestion;
 var start = $('#start');
+var instructions = $('#instructions');
 var input = '<input type="radio" name="answer">';
 var input2 = '<input type="radio" name="answer2">';
 var input3 = '<input type="radio" name="answer3">';
@@ -66,6 +67,8 @@ function startGame() {
     $('#timer').show();
     // Remove Start button
     start.remove();
+    // Remove instructions
+    instructions.remove();
     // Append questions, answers
     $('#question').append('<h3>#1: ' + q1.q + '</h3>');
     $('#answer').append(input + q1.a[0], input + q1.a[1], input + q1.a[2], input + q1.a[3]);

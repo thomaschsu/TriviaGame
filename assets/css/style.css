@@ -57,3 +57,8 @@ button {
     color: #FFF;
     border: none;
 }
+#instructions {
+    padding: 15px 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
