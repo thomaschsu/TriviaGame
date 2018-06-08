@@ -10,7 +10,7 @@
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var number = 999;
+var number = 120;
 var intervalId;
 var showQuestion;
 var start = $('#start');
