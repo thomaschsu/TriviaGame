@@ -14,7 +14,7 @@ var showQuestion;
 var start = $('#start');
 var instructions = $('#instructions');
 var inputBegin = '<input type="radio" '
-var input = inputBegin + 'name="answer">';
+var input1 = inputBegin + 'name="answer">';
 var input2 = inputBegin + 'name="answer2">';
 var input3 = inputBegin + 'name="answer3">';
 var input4 = inputBegin + 'name="answer4">';
@@ -23,6 +23,7 @@ var input6 = inputBegin + 'name="answer6">';
 var input7 = inputBegin + 'name="answer7">';
 var input8 = inputBegin + 'name="answer8">';
 
+// <input type="radio" name="answer2" value=">
 
 // Questions
 var q1 = {
@@ -104,7 +105,7 @@ function startGame() {
     instructions.remove();
     // Append questions, answers
     $('#question').append('<h3>#1: ' + q1.q + '</h3>');
-    $('#answer').append(input + q1.a[0], input + q1.a[1], input + q1.a[2], input + q1.a[3]);
+    $('#answer').append(input1 + q1.a[0], input1 + q1.a[1], input1 + q1.a[2], input1 + q1.a[3]);
     $('#question2').append('<h3>#2: ' + q2.q + '</h3>');
     $('#answer2').append(input2 + q2.a[0], input2 + q2.a[1], input2 + q2.a[2], input2 + q2.a[3]);
     $('#question3').append('<h3>#3: ' + q3.q + '</h3>');
@@ -112,13 +113,13 @@ function startGame() {
     $('#question4').append('<h3>#4: ' + q4.q + '</h3>');
     $('#answer4').append(input4 + q4.a[0], input4 + q4.a[1], input4 + q4.a[2], input4 + q4.a[3]);
     $('#question5').append('<h3>#5: ' + q5.q + '</h3>');
-    $('#answer5').append(input4 + q5.a[0], input4 + q5.a[1], input4 + q5.a[2], input4 + q5.a[3]);
+    $('#answer5').append(input5 + q5.a[0], input5 + q5.a[1], input5 + q5.a[2], input5 + q5.a[3]);
     $('#question6').append('<h3>#6: ' + q6.q + '</h3>');
-    $('#answer6').append(input4 + q6.a[0], input4 + q6.a[1], input4 + q6.a[2], input4 + q6.a[3]);
+    $('#answer6').append(input6 + q6.a[0], input6 + q6.a[1], input6 + q6.a[2], input6 + q6.a[3]);
     $('#question7').append('<h3>#7: ' + q7.q + '</h3>');
-    $('#answer7').append(input4 + q7.a[0], input4 + q7.a[1], input4 + q7.a[2], input4 + q7.a[3]);
+    $('#answer7').append(input7 + q7.a[0], input7 + q7.a[1], input7 + q7.a[2], input7 + q7.a[3]);
     $('#question8').append('<h3>#8: ' + q8.q+ '</h3>');
-    $('#answer8').append(input4 + q8.a[0], input4 + q8.a[1], input4 + q8.a[2], input4 + q8.a[3]);
+    $('#answer8').append(input8 + q8.a[0], input8 + q8.a[1], input8 + q8.a[2], input8 + q8.a[3]);
 }
 
 function run() {
