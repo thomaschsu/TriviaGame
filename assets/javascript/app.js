@@ -1,8 +1,9 @@
 // Bugs list:
-// 1. Cannot capture value of input
-// 2. Create done button
-// 3. Count the question results
-// 4. Make label for radio buttons
+// 1. Add all questions
+// 2. Cannot capture value of input
+// 3. Create done button
+// 4. Count the question results
+// 5. Make label for radio buttons
 
 // Variables
 var correct = 0;
@@ -17,6 +18,11 @@ var input = '<input type="radio" name="answer">';
 var input2 = '<input type="radio" name="answer2">';
 var input3 = '<input type="radio" name="answer3">';
 var input4 = '<input type="radio" name="answer4">';
+var input5 = '<input type="radio" name="answer5">';
+var input6 = '<input type="radio" name="answer6">';
+var input7 = '<input type="radio" name="answer7">';
+var input8 = '<input type="radio" name="answer8">';
+
 
 // Questions
 var q1 = {
@@ -41,6 +47,30 @@ var q4 = {
     q: 'Which actress played Katniss Everdeen in "The Hunger Games"?',
     a: ['Anne Hathaway', 'Kate Winslet', 'Jennifer Lawrence', 'Natalie Portman'],
     ca: 'Jennifer Lawrence'
+};
+
+var q5 = {
+    q: 'Which movie features Bruce Willis as John McClane, a New York police officer, taking on a gang of criminals in a Los Angeles skyscraper on Christmas Eve?',
+    a: ['Jingle All the Way', 'Die Hard', 'The Santa Clause', 'Jack Frost'],
+    ca: 'Die Hard'
+};
+
+var q6 = {
+    q: 'Which Tom Hanks movie won the Academy Award for Best Picture in 1994?',
+    a: ['Forrest Gump', 'Cast Away', 'The Terminal', 'The Green Mile'],
+    ca: 'Forrest Gump'
+};
+
+var q7 = {
+    q: 'What was the name of the monkey in the Disney movie "Aladdin"?',
+    a: ['Gazeem', 'Jasmine', 'Jafar', 'Abu'],
+    ca: 'Abu'
+};
+
+var q8 = {
+    q: 'Bruce Willis played a convict turned time traveler in what 1995 movie?',
+    a: ['Die Hard 3', 'The Sixth Sense', '12 Monkeys', 'Looper'],
+    ca: '12 Monkeys'
 };
 
 // Press start, opens game / starts counter (120 seconds)
