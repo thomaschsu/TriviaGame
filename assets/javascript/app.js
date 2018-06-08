@@ -32,7 +32,7 @@ var end = $('#end');
 // Questions
 var q1 = {
     q: 'Who played Neo in The Matrix?',
-    a: ['Keanu Reeves', 'Denzel Washington', 'Johnny Depp','Tom Hanks'],
+    a: ['Keanu Reeves', 'Denzel Washington', 'Johnny Depp', 'Tom Hanks'],
     ca: 'Keanu Reeves'
 };
 
@@ -81,21 +81,21 @@ var q8 = {
 // Add values to answers
 for (var i = 0; i < 4; i++) {
     input1 += radioInput + 'name="answer1"' + radioId + q1.a[i] + '"' + radioValue + q1.a[i] + '">';
-    input1 += labelFor + q1.a[i] + '">'+ q1.a[i] + endLabel;
+    input1 += labelFor + q1.a[i] + '">' + q1.a[i] + endLabel;
     input2 += radioInput + 'name="answer2"' + radioId + q2.a[i] + '"' + radioValue + q2.a[i] + '">';
-    input2 += labelFor + q2.a[i] + '">'+ q2.a[i] + endLabel;
+    input2 += labelFor + q2.a[i] + '">' + q2.a[i] + endLabel;
     input3 += radioInput + 'name="answer3"' + radioId + q3.a[i] + '"' + radioValue + q3.a[i] + '">';
-    input3 += labelFor + q3.a[i] + '">'+ q3.a[i] + endLabel;
+    input3 += labelFor + q3.a[i] + '">' + q3.a[i] + endLabel;
     input4 += radioInput + 'name="answer4"' + radioId + q4.a[i] + '"' + radioValue + q4.a[i] + '">';
-    input4 += labelFor + q4.a[i] + '">'+ q4.a[i] + endLabel;
+    input4 += labelFor + q4.a[i] + '">' + q4.a[i] + endLabel;
     input5 += radioInput + 'name="answer5"' + radioId + q5.a[i] + '"' + radioValue + q5.a[i] + '">';
-    input5 += labelFor + q5.a[i] + '">'+ q5.a[i] + endLabel;
+    input5 += labelFor + q5.a[i] + '">' + q5.a[i] + endLabel;
     input6 += radioInput + 'name="answer6"' + radioId + q6.a[i] + '"' + radioValue + q6.a[i] + '">';
-    input6 += labelFor + q6.a[i] + '">'+ q6.a[i] + endLabel;
+    input6 += labelFor + q6.a[i] + '">' + q6.a[i] + endLabel;
     input7 += radioInput + 'name="answer7"' + radioId + q7.a[i] + '"' + radioValue + q7.a[i] + '">';
-    input7 += labelFor + q7.a[i] + '">'+ q7.a[i] + endLabel;
+    input7 += labelFor + q7.a[i] + '">' + q7.a[i] + endLabel;
     input8 += radioInput + 'name="answer8"' + radioId + q8.a[i] + '"' + radioValue + q8.a[i] + '">';
-    input8 += labelFor + q8.a[i] + '">'+ q8.a[i] + endLabel;
+    input8 += labelFor + q8.a[i] + '">' + q8.a[i] + endLabel;
 }
 
 // Press start, opens game / starts counter (120 seconds)
@@ -147,7 +147,7 @@ function startGame() {
     $('#answer6').append(input6);
     $('#question7').append('<h3>#7: ' + q7.q + '</h3>');
     $('#answer7').append(input7);
-    $('#question8').append('<h3>#8: ' + q8.q+ '</h3>');
+    $('#question8').append('<h3>#8: ' + q8.q + '</h3>');
     $('#answer8').append(input8);
 }
 
