@@ -1,9 +1,9 @@
 // Bugs list:
 // 1. Capture value of input
 // 2. Create done button
-// 3. Count the question results
+// 3. Count the results
 // 4. Make label for radio buttons
-// 5. Remove Repeat code
+// 5. Remove Repeated code
 
 // Variables
 var correct = 0;
@@ -144,7 +144,3 @@ $('#results').append("<h2>Unanswered: " + unanswered + "</h2>");
 // Regardless if answer all questions, says "All done" tells you correct, incorrect, and unanswered
 
 // Hit done button and goes to "All done" page
-
-$( "input" ).on( "click", function() {
-    $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
-});
