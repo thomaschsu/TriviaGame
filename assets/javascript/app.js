@@ -2,13 +2,11 @@
 // 1. Capture value of input
 // 2. If value = to ca then mark as correct, else mark as wrong
 // 3. Fix end game button
-// 4. Remove repeated code
 
 // Variables
 var correct = 0;
 var incorrect = 0;
-var unanswered = 0;
-var number = 120;
+var number = 5;
 var intervalId;
 var showQuestion;
 var start = $('#start');
@@ -23,6 +21,14 @@ var input6 = "";
 var input7 = "";
 var input8 = "";
 var radioInput = '<input type="radio" '
+var labelFor = '<label for="';
+var radioId = 'id="';
+var radioValue = 'value="';
+var results = $('#results');
+var endLabel = '</label>';
+var timer = $('#timer');
+var question = $('#question-container');
+var end = $('#end');
 
 // Questions
 var q1 = {
@@ -75,22 +81,22 @@ var q8 = {
 
 // Add values to answers
 for (var i = 0; i < 4; i++) {
-    input1 += radioInput + 'name="answer"' + 'id="' + q1.a[i] + '"' + 'value="' + q1.a[i] + '">';
-    input1 += '<label for="' + q1.a[i] + '">'+ q1.a[i] + '</label>';
-    input2 += radioInput + 'name="answer2"' + 'id="' + q2.a[i] + '"' + 'value="' + q2.a[i] + '">';
-    input2 += '<label for="' + q2.a[i] + '">'+ q2.a[i] + '</label>';
-    input3 += radioInput + 'name="answer3"' + 'id="' + q3.a[i] + '"' + 'value="' + q3.a[i] + '">';
-    input3 += '<label for="' + q3.a[i] + '">'+ q3.a[i] + '</label>';
-    input4 += radioInput + 'name="answer4"' + 'id="' + q4.a[i] + '"' + 'value="' + q4.a[i] + '">';
-    input4 += '<label for="' + q4.a[i] + '">'+ q4.a[i] + '</label>';
-    input5 += radioInput + 'name="answer5"' + 'id="' + q5.a[i] + '"' + 'value="' + q5.a[i] + '">';
-    input5 += '<label for="' + q5.a[i] + '">'+ q5.a[i] + '</label>';
-    input6 += radioInput + 'name="answer6"' + 'id="' + q6.a[i] + '"' + 'value="' + q6.a[i] + '">';
-    input6 += '<label for="' + q6.a[i] + '">'+ q6.a[i] + '</label>';
-    input7 += radioInput + 'name="answer7"' + 'id="' + q7.a[i] + '"' + 'value="' + q7.a[i] + '">';
-    input7 += '<label for="' + q7.a[i] + '">'+ q7.a[i] + '</label>';
-    input8 += radioInput + 'name="answer8"' + 'id="' + q8.a[i] + '"' + 'value="' + q8.a[i] + '">';
-    input8 += '<label for="' + q8.a[i] + '">'+ q8.a[i] + '</label>';
+    input1 += radioInput + 'name="answer"' + radioId + q1.a[i] + '"' + radioValue + q1.a[i] + '">';
+    input1 += labelFor + q1.a[i] + '">'+ q1.a[i] + endLabel;
+    input2 += radioInput + 'name="answer2"' + radioId + q2.a[i] + '"' + radioValue + q2.a[i] + '">';
+    input2 += labelFor + q2.a[i] + '">'+ q2.a[i] + endLabel;
+    input3 += radioInput + 'name="answer3"' + radioId + q3.a[i] + '"' + radioValue + q3.a[i] + '">';
+    input3 += labelFor + q3.a[i] + '">'+ q3.a[i] + endLabel;
+    input4 += radioInput + 'name="answer4"' + radioId + q4.a[i] + '"' + radioValue + q4.a[i] + '">';
+    input4 += labelFor + q4.a[i] + '">'+ q4.a[i] + endLabel;
+    input5 += radioInput + 'name="answer5"' + radioId + q5.a[i] + '"' + radioValue + q5.a[i] + '">';
+    input5 += labelFor + q5.a[i] + '">'+ q5.a[i] + endLabel;
+    input6 += radioInput + 'name="answer6"' + radioId + q6.a[i] + '"' + radioValue + q6.a[i] + '">';
+    input6 += labelFor + q6.a[i] + '">'+ q6.a[i] + endLabel;
+    input7 += radioInput + 'name="answer7"' + radioId + q7.a[i] + '"' + radioValue + q7.a[i] + '">';
+    input7 += labelFor + q7.a[i] + '">'+ q7.a[i] + endLabel;
+    input8 += radioInput + 'name="answer8"' + radioId + q8.a[i] + '"' + radioValue + q8.a[i] + '">';
+    input8 += labelFor + q8.a[i] + '">'+ q8.a[i] + endLabel;
 }
 
 // Press start, opens game / starts counter (120 seconds)
@@ -99,29 +105,29 @@ start.click(startGame);
 // Press end button, ends counter and game
 
 // Hides results & timer
-$('#results').hide();
-$('#timer').hide();
-$('#question-container').hide();
-$('#end').hide();
+results.hide();
+timer.hide();
+question.hide();
+end.hide();
 
 // Time remaining is 120 seconds for entire game
 function startTimer() {
     number--;
-    $("#timer").html("<h2>Time remaining: " + number + " Seconds</h2>");
+    timer.html("<h2>Time remaining: " + number + " Seconds</h2>");
     // When time hits 0, show results and remove everything else
     if (number === 0) {
-        $('#question-container').remove();
-        $('#timer').remove();
-        $('#results').show();
+        question.remove();
+        timer.remove();
+        results.show();
     }
 }
 
 function startGame() {
     // Start timer
     run();
-    $('#timer').show();
-    $('#question-container').show();
-    $('#end').show();
+    timer.show();
+    question.show();
+    end.show();
     // Remove Start button
     start.remove();
     // Remove instructions
@@ -150,12 +156,17 @@ function run() {
     intervalId = setInterval(startTimer, 1000);
 }
 
-// Count amount of correct, incorrect, and unanswered questions
-$('#results').html("<h2>All done!</h2>");
-$('#results').append("<h2>Correct Answers: " + correct + "</h2>");
-$('#results').append("<h2>Incorrect Answers: " + incorrect + "</h2>");
-$('#results').append("<h2>Unanswered: " + unanswered + "</h2>");
+console.log($('input[name=answer]:checked').val());
 
-// Regardless if answer all questions, says "All done" tells you correct, incorrect, and unanswered
+if ($('input[name=answer]:checked').val() == q1.ca) {
+    correct++;
+} else {
+    incorrect++;
+}
+
+// Count amount of correct, incorrect questions and displays in results
+results.html("<h2>All done!</h2>");
+results.append("<h2>Correct Answers: " + correct + "</h2>");
+results.append("<h2>Incorrect Answers: " + incorrect + "</h2>");
 
 // Hit done button and goes to "All done" page
