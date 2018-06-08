@@ -119,6 +119,7 @@ function startTimer() {
         question.remove();
         timer.remove();
         results.show();
+        end.hide();
     }
 }
 
@@ -165,8 +166,9 @@ function endGame() {
 
 // This code needs to be fixed. q is not defined ??
 for (var i = 1; i < 9; i++) {
-    if ($('input:radio[name="answer' + i + '"]:checked').val() === q[i].ca) {
+    if ($('input[name="answer1"]:checked').val() === q1.ca) {
         correct++;
+        results.append("<h2>Correct Answers: " + correct + "</h2>");
     } else {
         incorrect++;
     }
