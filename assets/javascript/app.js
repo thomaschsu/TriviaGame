@@ -165,7 +165,7 @@ function endGame() {
 
 // This code needs to be fixed. q is not defined ??
 for (var i = 1; i < 9; i++) {
-    if ($('input:radio[name="' + 'answer' + i + '"]:checked').val() === q[i].ca) {
+    if ($('input:radio[name="answer' + i + '"]:checked').val() === q[i].ca) {
         correct++;
     } else {
         incorrect++;
