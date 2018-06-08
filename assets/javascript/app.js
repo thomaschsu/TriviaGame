@@ -2,8 +2,7 @@
 // 1. Capture value of input
 // 2. If value = to ca then mark as correct, else mark as wrong
 // 3. Fix end game button
-// 4. Make conditional statement to count results
-// 5. Remove repeated code
+// 4. Remove repeated code
 
 // Variables
 var correct = 0;
