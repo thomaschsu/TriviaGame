@@ -1,9 +1,8 @@
 // Bugs list:
 // 1. Capture value of input
-// 2. Make value equal to ca
+// 2. If value = to ca then mark as correct, else mark as wrong
 // 3. Fix end game button
 // 4. Make conditional statement to count results
-// 5. Make label for radio buttons
 // 6. Remove Repeated code
 
 // Variables
@@ -24,74 +23,75 @@ var input5 = "";
 var input6 = "";
 var input7 = "";
 var input8 = "";
+var radioInput = '<input type="radio" '
 
 // Questions
 var q1 = {
     q: 'Who played Neo in The Matrix?',
     a: ['Keanu Reeves', 'Denzel Washington', 'Johnny Depp','Tom Hanks'],
-    ca: 0
+    ca: 'Keanu Reeves'
 };
 
 var q2 = {
     q: 'BB-8 is an astromech droid from what film?',
     a: ['Alien', 'Star Wars', 'Nightmare on Elm Street', 'E.T.'],
-    ca: 1
+    ca: 'Star Wars'
 };
 
 var q3 = {
     q: 'What fictional city is the home of Batman?',
     a: ['Gateway City', 'The Hidden City', 'Zenith City', 'Gotham City'],
-    ca: 3
+    ca: 'Gotham City'
 };
 
 var q4 = {
     q: 'Which actress played Katniss Everdeen in "The Hunger Games"?',
     a: ['Anne Hathaway', 'Kate Winslet', 'Jennifer Lawrence', 'Natalie Portman'],
-    ca: 2
+    ca: 'Jennifer Lawrence'
 };
 
 var q5 = {
     q: 'Which movie features Bruce Willis as John McClane, a New York police officer, taking on a gang of criminals in a Los Angeles skyscraper on Christmas Eve?',
     a: ['Jingle All the Way', 'Die Hard', 'The Santa Clause', 'Jack Frost'],
-    ca: 1
+    ca: 'Die Hard'
 };
 
 var q6 = {
     q: 'Which Tom Hanks movie won the Academy Award for Best Picture in 1994?',
     a: ['Forrest Gump', 'Cast Away', 'The Terminal', 'The Green Mile'],
-    ca: 0
+    ca: 'Forrest Gump'
 };
 
 var q7 = {
     q: 'What was the name of the monkey in the Disney movie "Aladdin"?',
     a: ['Gazeem', 'Jasmine', 'Jafar', 'Abu'],
-    ca: 3
+    ca: 'Abu'
 };
 
 var q8 = {
     q: 'Bruce Willis played a convict turned time traveler in what 1995 movie?',
     a: ['Die Hard 3', 'The Sixth Sense', '12 Monkeys', 'Looper'],
-    ca: 2
+    ca: '12 Monkeys'
 };
 
 // Add values to answers
 for (var i = 0; i < 4; i++) {
-    input1 += '<input type="radio" name="answer" value="' + i + '">';
-    input1 += q1.a[i];
-    input2 += '<input type="radio" name="answer" value="' + i + '">';
-    input2 += q2.a[i];
-    input3 += '<input type="radio" name="answer" value="' + i + '">';
-    input3 += q3.a[i];
-    input4 += '<input type="radio" name="answer" value="' + i + '">';
-    input4 += q4.a[i];
-    input5 += '<input type="radio" name="answer" value="' + i + '">';
-    input5 += q5.a[i];
-    input6 += '<input type="radio" name="answer" value="' + i + '">';
-    input6 += q6.a[i];
-    input7 += '<input type="radio" name="answer" value="' + i + '">';
-    input7 += q7.a[i];
-    input8 += '<input type="radio" name="answer" value="' + i + '">';
-    input8 += q8.a[i];
+    input1 += radioInput + 'name="answer"' + 'id="' + q1.a[i] + '"' + 'value="' + q1.a[i] + '">';
+    input1 += '<label for="' + q1.a[i] + '">'+ q1.a[i] + '</label>';
+    input2 += radioInput + 'name="answer2"' + 'id="' + q2.a[i] + '"' + 'value="' + q2.a[i] + '">';
+    input2 += '<label for="' + q2.a[i] + '">'+ q2.a[i] + '</label>';
+    input3 += radioInput + 'name="answer3"' + 'id="' + q3.a[i] + '"' + 'value="' + q3.a[i] + '">';
+    input3 += '<label for="' + q3.a[i] + '">'+ q3.a[i] + '</label>';
+    input4 += radioInput + 'name="answer4"' + 'id="' + q4.a[i] + '"' + 'value="' + q4.a[i] + '">';
+    input4 += '<label for="' + q4.a[i] + '">'+ q4.a[i] + '</label>';
+    input5 += radioInput + 'name="answer5"' + 'id="' + q5.a[i] + '"' + 'value="' + q5.a[i] + '">';
+    input5 += '<label for="' + q5.a[i] + '">'+ q5.a[i] + '</label>';
+    input6 += radioInput + 'name="answer6"' + 'id="' + q6.a[i] + '"' + 'value="' + q6.a[i] + '">';
+    input6 += '<label for="' + q6.a[i] + '">'+ q6.a[i] + '</label>';
+    input7 += radioInput + 'name="answer7"' + 'id="' + q7.a[i] + '"' + 'value="' + q7.a[i] + '">';
+    input7 += '<label for="' + q7.a[i] + '">'+ q7.a[i] + '</label>';
+    input8 += radioInput + 'name="answer8"' + 'id="' + q8.a[i] + '"' + 'value="' + q8.a[i] + '">';
+    input8 += '<label for="' + q8.a[i] + '">'+ q8.a[i] + '</label>';
 }
 
 // Press start, opens game / starts counter (120 seconds)
