@@ -111,6 +111,15 @@ function startGame() {
     $('#answer3').append(input3 + q3.a[0], input3 + q3.a[1], input3 + q3.a[2], input3 + q3.a[3]);
     $('#question4').append('<h3>#4: ' + q4.q + '</h3>');
     $('#answer4').append(input4 + q4.a[0], input4 + q4.a[1], input4 + q4.a[2], input4 + q4.a[3]);
+
+    $('#question5').append('<h3>#5: ' + q5.q + '</h3>');
+    $('#answer5').append(input4 + q5.a[0], input4 + q5.a[1], input4 + q5.a[2], input4 + q5.a[3]);
+    $('#question6').append('<h3>#6: ' + q6.q + '</h3>');
+    $('#answer6').append(input4 + q6.a[0], input4 + q6.a[1], input4 + q6.a[2], input4 + q6.a[3]);
+    $('#question7').append('<h3>#7: ' + q7.q + '</h3>');
+    $('#answer7').append(input4 + q7.a[0], input4 + q7.a[1], input4 + q7.a[2], input4 + q7.a[3]);
+    $('#question8').append('<h3>#8: ' + q8.q+ '</h3>');
+    $('#answer8').append(input4 + q8.a[0], input4 + q8.a[1], input4 + q8.a[2], input4 + q8.a[3]);
 }
 
 function run() {
@@ -119,7 +128,6 @@ function run() {
 }
 
 // Count amount of correct, incorrect, and unanswered questions
-
 $('#results').html("<h2>All done!</h2>");
 $('#results').append("<h2>Correct Answers: " + correct + "</h2>");
 $('#results').append("<h2>Incorrect Answers: " + incorrect + "</h2>");
