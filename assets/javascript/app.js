@@ -48,6 +48,7 @@ start.click(startGame);
 // Hides results & timer
 $('#results').hide();
 $('#timer').hide();
+$('#question-container').hide();
 
 // Time remaining is 120 seconds for entire game
 function startTimer() {
@@ -65,6 +66,7 @@ function startGame() {
     // Start timer
     run();
     $('#timer').show();
+    $('#question-container').show();
     // Remove Start button
     start.remove();
     // Remove instructions
