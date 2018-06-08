@@ -3,6 +3,7 @@
 // 2. Create done button
 // 3. Count the question results
 // 4. Make label for radio buttons
+// 5. Remove Repeat code
 
 // Variables
 var correct = 0;
@@ -14,15 +15,22 @@ var showQuestion;
 var start = $('#start');
 var instructions = $('#instructions');
 var inputBegin = '<input type="radio" '
-var input1 = inputBegin + 'name="answer">';
-var input2 = inputBegin + 'name="answer2">';
-var input3 = inputBegin + 'name="answer3">';
-var input4 = inputBegin + 'name="answer4">';
-var input5 = inputBegin + 'name="answer5">';
-var input6 = inputBegin + 'name="answer6">';
-var input7 = inputBegin + 'name="answer7">';
-var input8 = inputBegin + 'name="answer8">';
-
+var value1 = ' value="1">';
+var value2 = ' value="2">';
+var value3 = ' value="3">';
+var value4 = ' value="4">';
+var value5 = ' value="5">';
+var value6 = ' value="6">';
+var value7 = ' value="7">';
+var value8 = ' value="8">';
+var input1 = inputBegin + 'name="answer"' + value1;
+var input2 = inputBegin + 'name="answer2"' + value2;
+var input3 = inputBegin + 'name="answer3"' + value3;
+var input4 = inputBegin + 'name="answer4"' + value4;
+var input5 = inputBegin + 'name="answer5"' + value5;
+var input6 = inputBegin + 'name="answer6"' + value6;
+var input7 = inputBegin + 'name="answer7"' + value7;
+var input8 = inputBegin + 'name="answer8"' + value8;
 // <input type="radio" name="answer2" value=">
 
 // Questions
@@ -136,3 +144,7 @@ $('#results').append("<h2>Unanswered: " + unanswered + "</h2>");
 // Regardless if answer all questions, says "All done" tells you correct, incorrect, and unanswered
 
 // Hit done button and goes to "All done" page
+
+$( "input" ).on( "click", function() {
+    $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
+});
