@@ -1,12 +1,11 @@
 // Bugs list:
 // 1. Capture value of input
 // 2. If value = to ca then mark as correct, else mark as wrong
-// 3. Fix end game button
 
 // Variables
 var correct = 0;
 var incorrect = 0;
-var number = 5;
+var number = 120;
 var intervalId;
 var showQuestion;
 var start = $('#start');
@@ -102,9 +101,10 @@ for (var i = 0; i < 4; i++) {
 // Press start, opens game / starts counter (120 seconds)
 start.click(startGame);
 
-// Press end button, ends counter and game
+// // Hit done button and goes to results page
+end.click(endGame);
 
-// Hides results & timer
+// Hides results, timer, questions
 results.hide();
 timer.hide();
 question.hide();
@@ -156,6 +156,13 @@ function run() {
     intervalId = setInterval(startTimer, 1000);
 }
 
+function endGame() {
+    question.remove();
+    timer.remove();
+    results.show();
+    end.hide();
+}
+
 console.log($('input[name=answer]:checked').val());
 
 if ($('input[name=answer]:checked').val() == q1.ca) {
@@ -168,5 +175,3 @@ if ($('input[name=answer]:checked').val() == q1.ca) {
 results.html("<h2>All done!</h2>");
 results.append("<h2>Correct Answers: " + correct + "</h2>");
 results.append("<h2>Incorrect Answers: " + incorrect + "</h2>");
-
-// Hit done button and goes to "All done" page
