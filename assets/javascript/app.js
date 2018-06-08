@@ -168,7 +168,6 @@ function endGame() {
 for (var i = 1; i < 9; i++) {
     if ($('input[name="answer1"]:checked').val() === q1.ca) {
         correct++;
-        results.append("<h2>Correct Answers: " + correct + "</h2>");
     } else {
         incorrect++;
     }
