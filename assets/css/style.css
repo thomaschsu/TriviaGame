@@ -50,3 +50,9 @@ input {
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
     text-shadow: 1px 1px #000;
 }
+button {
+    padding: 10px 15px;
+    background-color: #29B6F6;
+    color: #FFF;
+    border: none;
+}
