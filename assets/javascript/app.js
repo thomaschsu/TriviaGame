@@ -80,7 +80,7 @@ var q8 = {
 
 // Add values to answers
 for (var i = 0; i < 4; i++) {
-    input1 += radioInput + 'name="answer"' + radioId + q1.a[i] + '"' + radioValue + q1.a[i] + '">';
+    input1 += radioInput + 'name="answer1"' + radioId + q1.a[i] + '"' + radioValue + q1.a[i] + '">';
     input1 += labelFor + q1.a[i] + '">'+ q1.a[i] + endLabel;
     input2 += radioInput + 'name="answer2"' + radioId + q2.a[i] + '"' + radioValue + q2.a[i] + '">';
     input2 += labelFor + q2.a[i] + '">'+ q2.a[i] + endLabel;
@@ -133,8 +133,8 @@ function startGame() {
     // Remove instructions
     instructions.remove();
     // Append questions, answers
-    $('#question').append('<h3>#1: ' + q1.q + '</h3>');
-    $('#answer').append(input1);
+    $('#question1').append('<h3>#1: ' + q1.q + '</h3>');
+    $('#answer1').append(input1);
     $('#question2').append('<h3>#2: ' + q2.q + '</h3>');
     $('#answer2').append(input2);
     $('#question3').append('<h3>#3: ' + q3.q + '</h3>');
@@ -163,12 +163,13 @@ function endGame() {
     end.hide();
 }
 
-console.log($('input[name=answer]:checked').val());
-
-if ($('input[name=answer]:checked').val() == q1.ca) {
-    correct++;
-} else {
-    incorrect++;
+// This code needs to be fixed. q is not defined ??
+for (var i = 1; i < 9; i++) {
+    if ($('input:radio[name="' + 'answer' + i + '"]:checked').val() === q[i].ca) {
+        correct++;
+    } else {
+        incorrect++;
+    }
 }
 
 // Count amount of correct, incorrect questions and displays in results
