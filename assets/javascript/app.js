@@ -2,6 +2,7 @@
 // 1. Cannot capture value of input
 // 2. Create done button
 // 3. Count the question results
+// 4. Make label for radio buttons
 
 // Variables
 var correct = 0;
