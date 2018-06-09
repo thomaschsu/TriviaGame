@@ -1,7 +1,6 @@
 // Bugs list:
 // 1. Capture value of input
 // 2. If value = to ca then mark as correct, else mark as wrong
-
 // Variables
 var correct = 0;
 var incorrect = 0;
@@ -120,6 +119,7 @@ function startTimer() {
         timer.hide();
         results.show();
         end.hide();
+        check();
     }
 }
 
@@ -162,9 +162,11 @@ function endGame() {
     timer.hide();
     results.show();
     end.hide();
+    check();
 }
 
 // This code needs to be fixed. q is not defined ??
+function check() {
     if ($('input[name="answer1"]:checked').val() === q1.ca) {
         correct++;
         showResults();
@@ -172,7 +174,17 @@ function endGame() {
         incorrect++;
         showResults();
     }
+}
 
+for (var i = 1; i < 9; i++) {
+    if ($('input[name="' + 'answer' + i + '"]:checked').val() === q[i].ca) {
+        correct++;
+        showResults();
+    } else {
+        incorrect++;
+        showResults();
+    }
+}
 // Count amount of correct, incorrect questions and displays in results
 function showResults() {
     results.html("<h2>All done!</h2>");
