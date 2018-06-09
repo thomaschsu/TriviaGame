@@ -14,7 +14,7 @@ var input5 = "";
 var input6 = "";
 var input7 = "";
 var input8 = "";
-var radioInput = '<input type="radio" '
+var radioInput = '<input type="radio" ';
 var labelFor = '<label for="';
 var radioId = 'id="';
 var radioValue = 'value="';
@@ -144,18 +144,19 @@ function startGame() {
     $('#answer8').append(input8);
 }
 
+// Function for running timer
 function run() {
     clearInterval(intervalId);
     intervalId = setInterval(startTimer, 1000);
 }
 
-// Function for ending game through button
+// Function for ending game
 function endGame() {
     question.hide();
     timer.hide();
     results.show();
     end.hide();
-    checkQuestions()
+    checkQuestions();
     showResults();
 }
 
