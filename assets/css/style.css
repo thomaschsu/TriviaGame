@@ -35,12 +35,6 @@ body {
 #start:hover {
     background-color: #90A4AE;
 }
-#correctanswer,
-#wronganswers,
-#correctanswer2,
-#wronganswers2 {
-    display: inline;
-}
 input {
     margin: 0 5px;
 }
