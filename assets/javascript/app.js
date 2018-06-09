@@ -111,19 +111,7 @@ function startTimer() {
     timer.html("<h2>Time remaining: " + number + " Seconds</h2>");
     // When time hits 0, show results and remove everything else and check questions
     if (number === 0) {
-        question.hide();
-        timer.hide();
-        results.show();
-        end.hide();
-        check();
-        check2();
-        check3();
-        check4();
-        check5();
-        check6();
-        check7();
-        check8();
-        showResults();
+        endGame();
     }
 }
 
@@ -167,6 +155,11 @@ function endGame() {
     timer.hide();
     results.show();
     end.hide();
+    checkQuestions()
+    showResults();
+}
+
+function checkQuestions() {
     check();
     check2();
     check3();
@@ -175,7 +168,6 @@ function endGame() {
     check6();
     check7();
     check8();
-    showResults();
 }
 
 function check() {
