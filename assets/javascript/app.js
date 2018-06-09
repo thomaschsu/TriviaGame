@@ -154,6 +154,7 @@ function endGame() {
     showResults();
 }
 
+// Function for checking each question's answer
 function check() {
     if ($('input[name="answer1"]:checked').val() === q1.ca) {
         correct++;
