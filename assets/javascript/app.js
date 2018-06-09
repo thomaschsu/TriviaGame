@@ -182,8 +182,10 @@ function endGame() {
 function check() {
     if ($('input[name="answer1"]:checked').val() === q1.ca) {
         correct++;
+        showResults();
     } else {
         incorrect++;
+        showResults();
     }
 }
 
@@ -257,7 +259,7 @@ function check8() {
     }
 }
 
-// Count amount of correct, incorrect questions and displays in results
+// Display results
 function showResults() {
     results.html("<h2>All done!</h2>");
     results.append("<h4>Correct Answers: " + correct + "</h4>");
