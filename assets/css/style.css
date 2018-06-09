@@ -59,3 +59,21 @@ button {
     font-size: 20px;
     margin-bottom: 20px;
 }
+#question1,
+#question2,
+#question3,
+#question4,
+#question5,
+#question6,
+#question7,
+#question8,
+#answer1,
+#answer2,
+#answer3,
+#answer4,
+#answer5,
+#answer6,
+#answer7,
+#answer8 {
+    margin: 20px 0;
+}
