@@ -150,19 +150,8 @@ function endGame() {
     timer.hide();
     results.show();
     end.hide();
-    checkQuestions();
-    showResults();
-}
-
-function checkQuestions() {
     check();
-    check2();
-    check3();
-    check4();
-    check5();
-    check6();
-    check7();
-    check8();
+    showResults();
 }
 
 function check() {
@@ -171,57 +160,43 @@ function check() {
     } else {
         incorrect++;
     }
-}
 
-function check2() {
     if ($('input[name="answer2"]:checked').val() === q2.ca) {
         correct++;
     } else {
         incorrect++;
     }
-}
-
-function check3() {
+    
     if ($('input[name="answer3"]:checked').val() === q3.ca) {
         correct++;
     } else {
         incorrect++;
     }
-}
-
-function check4() {
+    
     if ($('input[name="answer4"]:checked').val() === q4.ca) {
         correct++;
     } else {
         incorrect++;
     }
-}
-
-function check5() {
+    
     if ($('input[name="answer5"]:checked').val() === q5.ca) {
         correct++;
     } else {
         incorrect++;
     }
-}
-
-function check6() {
+    
     if ($('input[name="answer6"]:checked').val() === q6.ca) {
         correct++;
     } else {
         incorrect++;
     }
-}
-
-function check7() {
+    
     if ($('input[name="answer7"]:checked').val() === q7.ca) {
         correct++;
     } else {
         incorrect++;
     }
-}
-
-function check8() {
+    
     if ($('input[name="answer8"]:checked').val() === q8.ca) {
         correct++;
     } else {
