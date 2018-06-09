@@ -1,6 +1,6 @@
 // Bugs list:
-// 1. Capture value of input
-// 2. If value = to ca then mark as correct, else mark as wrong
+// 1. Remove redundant code
+
 // Variables
 var correct = 0;
 var incorrect = 0;
