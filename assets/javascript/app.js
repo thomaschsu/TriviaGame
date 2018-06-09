@@ -167,7 +167,7 @@ function endGame() {
 // This code needs to be fixed. q is not defined ??
     if ($('input[name="answer1"]:checked').val() === q1.ca) {
         correct++;
-        results.append("<h2>Correct Answers: " + correct + "</h2>");
+        showResults();
     } else {
         incorrect++;
         showResults();
