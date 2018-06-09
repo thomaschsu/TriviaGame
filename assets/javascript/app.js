@@ -1,6 +1,3 @@
-// Bugs list:
-// 1. Remove redundant code
-
 // Variables
 var correct = 0;
 var incorrect = 0;
