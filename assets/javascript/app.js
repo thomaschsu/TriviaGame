@@ -73,7 +73,7 @@ var q8 = {
     ca: '12 Monkeys'
 };
 
-// Add values to answers
+// Add values, names to answers
 for (var i = 0; i < 4; i++) {
     input1 += radioInput + 'name="answer1"' + radioId + q1.a[i] + '"' + radioValue + q1.a[i] + '">';
     input1 += labelFor + q1.a[i] + '">' + q1.a[i] + endLabel;
@@ -123,6 +123,7 @@ function startTimer() {
         check6();
         check7();
         check8();
+        showResults();
     }
 }
 
@@ -174,85 +175,70 @@ function endGame() {
     check6();
     check7();
     check8();
+    showResults();
 }
 
 function check() {
     if ($('input[name="answer1"]:checked').val() === q1.ca) {
         correct++;
-        showResults();
     } else {
         incorrect++;
-        showResults();
     }
 }
 
 function check2() {
     if ($('input[name="answer2"]:checked').val() === q2.ca) {
         correct++;
-        showResults();
     } else {
         incorrect++;
-        showResults();
     }
 }
 
 function check3() {
     if ($('input[name="answer3"]:checked').val() === q3.ca) {
         correct++;
-        showResults();
     } else {
         incorrect++;
-        showResults();
     }
 }
 
 function check4() {
     if ($('input[name="answer4"]:checked').val() === q4.ca) {
         correct++;
-        showResults();
     } else {
         incorrect++;
-        showResults();
     }
 }
 
 function check5() {
     if ($('input[name="answer5"]:checked').val() === q5.ca) {
         correct++;
-        showResults();
     } else {
         incorrect++;
-        showResults();
     }
 }
 
 function check6() {
     if ($('input[name="answer6"]:checked').val() === q6.ca) {
         correct++;
-        showResults();
     } else {
         incorrect++;
-        showResults();
     }
 }
 
 function check7() {
     if ($('input[name="answer7"]:checked').val() === q7.ca) {
         correct++;
-        showResults();
     } else {
         incorrect++;
-        showResults();
     }
 }
 
 function check8() {
     if ($('input[name="answer8"]:checked').val() === q8.ca) {
         correct++;
-        showResults();
     } else {
         incorrect++;
-        showResults();
     }
 }
 
