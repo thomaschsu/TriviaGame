@@ -120,6 +120,13 @@ function startTimer() {
         results.show();
         end.hide();
         check();
+        check2();
+        check3();
+        check4();
+        check5();
+        check6();
+        check7();
+        check8();
     }
 }
 
@@ -163,21 +170,25 @@ function endGame() {
     results.show();
     end.hide();
     check();
+    check2();
+    check3();
+    check4();
+    check5();
+    check6();
+    check7();
+    check8();
 }
 
-// This code needs to be fixed. q is not defined ??
 function check() {
     if ($('input[name="answer1"]:checked').val() === q1.ca) {
         correct++;
-        showResults();
     } else {
         incorrect++;
-        showResults();
     }
 }
 
-for (var i = 1; i < 9; i++) {
-    if ($('input[name="' + 'answer' + i + '"]:checked').val() === q[i].ca) {
+function check2() {
+    if ($('input[name="answer2"]:checked').val() === q2.ca) {
         correct++;
         showResults();
     } else {
@@ -185,9 +196,70 @@ for (var i = 1; i < 9; i++) {
         showResults();
     }
 }
+
+function check3() {
+    if ($('input[name="answer3"]:checked').val() === q3.ca) {
+        correct++;
+        showResults();
+    } else {
+        incorrect++;
+        showResults();
+    }
+}
+
+function check4() {
+    if ($('input[name="answer4"]:checked').val() === q4.ca) {
+        correct++;
+        showResults();
+    } else {
+        incorrect++;
+        showResults();
+    }
+}
+
+function check5() {
+    if ($('input[name="answer5"]:checked').val() === q5.ca) {
+        correct++;
+        showResults();
+    } else {
+        incorrect++;
+        showResults();
+    }
+}
+
+function check6() {
+    if ($('input[name="answer6"]:checked').val() === q6.ca) {
+        correct++;
+        showResults();
+    } else {
+        incorrect++;
+        showResults();
+    }
+}
+
+function check7() {
+    if ($('input[name="answer7"]:checked').val() === q7.ca) {
+        correct++;
+        showResults();
+    } else {
+        incorrect++;
+        showResults();
+    }
+}
+
+function check8() {
+    if ($('input[name="answer8"]:checked').val() === q8.ca) {
+        correct++;
+        showResults();
+    } else {
+        incorrect++;
+        showResults();
+    }
+}
+
 // Count amount of correct, incorrect questions and displays in results
 function showResults() {
     results.html("<h2>All done!</h2>");
-    results.append("<h2>Correct Answers: " + correct + "</h2>");
-    results.append("<h2>Incorrect Answers: " + incorrect + "</h2>");
+    results.append("<h4>Correct Answers: " + correct + "</h4>");
+    results.append("<h4>Incorrect Answers: " + incorrect + "</h4>");
 }
