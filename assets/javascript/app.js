@@ -116,8 +116,8 @@ function startTimer() {
     timer.html("<h2>Time remaining: " + number + " Seconds</h2>");
     // When time hits 0, show results and remove everything else
     if (number === 0) {
-        question.remove();
-        timer.remove();
+        question.hide();
+        timer.hide();
         results.show();
         end.hide();
     }
@@ -130,9 +130,9 @@ function startGame() {
     question.show();
     end.show();
     // Remove Start button
-    start.remove();
+    start.hide();
     // Remove instructions
-    instructions.remove();
+    instructions.hide();
     // Append questions, answers
     $('#question1').append('<h3>#1: ' + q1.q + '</h3>');
     $('#answer1').append(input1);
@@ -158,22 +158,24 @@ function run() {
 }
 
 function endGame() {
-    question.remove();
-    timer.remove();
+    question.hide();
+    timer.hide();
     results.show();
     end.hide();
 }
 
 // This code needs to be fixed. q is not defined ??
-for (var i = 1; i < 9; i++) {
     if ($('input[name="answer1"]:checked').val() === q1.ca) {
         correct++;
+        results.append("<h2>Correct Answers: " + correct + "</h2>");
     } else {
         incorrect++;
+        showResults();
     }
-}
 
 // Count amount of correct, incorrect questions and displays in results
-results.html("<h2>All done!</h2>");
-results.append("<h2>Correct Answers: " + correct + "</h2>");
-results.append("<h2>Incorrect Answers: " + incorrect + "</h2>");
+function showResults() {
+    results.html("<h2>All done!</h2>");
+    results.append("<h2>Correct Answers: " + correct + "</h2>");
+    results.append("<h2>Incorrect Answers: " + incorrect + "</h2>");
+}
