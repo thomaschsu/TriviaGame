@@ -99,7 +99,7 @@ start.click(startGame);
 // // Hit done button and goes to results page
 end.click(endGame);
 
-// Hides results, timer, questions
+// Hides results, timer, questions from start
 results.hide();
 timer.hide();
 question.hide();
@@ -109,7 +109,7 @@ end.hide();
 function startTimer() {
     number--;
     timer.html("<h2>Time remaining: " + number + " Seconds</h2>");
-    // When time hits 0, show results and remove everything else
+    // When time hits 0, show results and remove everything else and check questions
     if (number === 0) {
         question.hide();
         timer.hide();
@@ -160,6 +160,7 @@ function run() {
     intervalId = setInterval(startTimer, 1000);
 }
 
+// Function for ending game through button
 function endGame() {
     question.hide();
     timer.hide();
