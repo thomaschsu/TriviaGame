@@ -6,7 +6,6 @@ var correct = 0;
 var incorrect = 0;
 var number = 120;
 var intervalId;
-var showQuestion;
 var start = $('#start');
 var end = $('#end');
 var instructions = $('#instructions');
